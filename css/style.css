@@ -4,7 +4,6 @@ body {
 
 h1 {
     color: rgb(255, 255, 255);
-    background-color: rgb(71, 71, 71);
 }
 
 h2 {
@@ -15,3 +14,39 @@ span {
     color: blue;
 }
 
+#header {
+    height: 100px;
+    background-color: rgba(104, 104, 104, 0.438);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+#sidebar {
+    width: 100px;
+    background-color: rgba(138, 138, 138, 0.521);
+}
+
+#content {
+    width: 680px;
+    background-color: blue;
+}
+
+#footer {
+    height: 100px;
+    background-color: rgba(255, 139, 139, 0.438);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF ;
+}
+
+.flex-row {
+    display: flex;
+}
+
+#menu {
+    height: 50px;
+    width: 50px;
+    background-color: brown;
+}
