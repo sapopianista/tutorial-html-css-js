@@ -3,11 +3,11 @@ body {
 }
 
 h1 {
-    color: rgb(255, 255, 255);
+    color: black;
 }
 
 h2 {
-    color: rgb(183, 183, 184);
+    color: black;
 }
 
 span {
@@ -20,25 +20,32 @@ span {
     display: flex;
     justify-content:space-between;
     align-items: center;
+    color: black
+}
+
+#header img{
+    height: 80px;
+    height: 80px;
 }
 
 #sidebar {
-    width: 100px;
-    background-color: rgba(138, 138, 138, 0.521);
+    width: 150px;
+    background-color: grey;
 }
 
 #content {
-    width: 680px;
-    background-color: blue;
+    width: 800px;
+    height: 800px;
+    background-color: white;
 }
 
 #footer {
     height: 100px;
-    background-color: rgba(255, 139, 139, 0.438);
+    background-color: rgba(104, 104, 104, 0.438);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #FFF ;
+    color: white;
 }
 
 .flex-row {
@@ -47,6 +54,14 @@ span {
 
 #menu {
     height: 50px;
-    width: 50px;
-    background-color: brown;
+    width: 300px;
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#menu a{
+    color: white;
+    text-decoration: none;
 }
