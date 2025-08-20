@@ -5,7 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>layout 5</title>
 </head>
+    <style>
+        header{
+            height: 90px;
+            background-color: black;
+        }
+        
+        .flexrow{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        aside{
+            width: 200px;
+            height: calc(100vh - 210px);
+            background-color: yellow;
+        }
+
+        main{
+            width: 780px;
+            height: calc(100vh - 210px);
+            background-color: aquamarine;
+        }
+
+        footer{
+            height: 120px;
+            background-color: black;
+        }
+
+        .wrapper{
+            margin: 0 auto;
+            width: 1000px;
+        }
+
+    </style>
 <body>
-    
+    <header>
+        <div class="wrapper" style="height: 90px;"></div>
+    </header>
+    <div class="flexrow">
+        <aside></aside>
+        <main></main>
+    </div>
+    <footer>
+        <div class="wrapper" style= "height: 120px;"></div>
+    </footer>
 </body>
 </html>

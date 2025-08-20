@@ -13,19 +13,21 @@
             display: flex;
             background-color: grey;
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-between;
         }
 
         header logo{
             width: 50px;
             height: 50px;
             background-color: black;
+            margin: 0px 50px;
         }
 
         header menu{
             width: 150px;
             height: 50px;
             background-color: black;
+            margin: 0px 50px;
         }
 
         main{
@@ -43,6 +45,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 10%;
         }
 
         #section1 img{
@@ -51,13 +54,26 @@
             background-color: blueviolet;
         }
 
-        #texto{
-            height: 200px;
+        #textbox{
+            height: 100px;
             width: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
+            color: blueviolet;
+        }
+
+        #tittle{
+            background-color: blueviolet;
+            width: 200px;
+            height: 40px;
+        }
+
+        #subtittle{
+            background-color: blueviolet;
+            width: 200px;
+            height: 40px;
         }
 
         #section2{
@@ -90,11 +106,12 @@
             background-color: rgb(226, 43, 43);
         }
 
-        footer textarea{
+        footer div{
             height: 100px;
             width: 250px;
             background-color: aquamarine;
             align-self: flex-start;
+            margin-top: 20px;
         }
 
     </style>
@@ -106,9 +123,9 @@
     <main>
         <div id="section1">
             <img></img>
-            <div id="texto">
-                <h1>texto</h1>
-                <h2>mais texto</h2>
+            <div id="textbox">
+                <div id="tittle"></div>
+                <div id="subtittle"></div>
             </div>
         </div>
         <div id="section2">
@@ -118,7 +135,7 @@
         </div>
         <footer>
             <img></img>
-            <textarea></textarea>
+            <div></div>
         </footer>
     </main>
 </body>
