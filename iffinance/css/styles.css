@@ -36,7 +36,7 @@ header nav ul li a{
 }
 
 header nav ul li a:hover, .active{
-    border-bottom: 2px solid #68AFFF;
+    border-bottom: 3px solid #68AFFF;
     color: #68AFFF;
 }
 
@@ -186,4 +186,17 @@ body > footer {
 
 .buttons button {
     margin: 0;
+}
+
+table, td, th{
+    border: 2px solid #FFF
+}
+
+table{
+    width: 360px;
+    border-collapse: collapse;
+}
+
+td{
+    padding: 5px 10px;
 }

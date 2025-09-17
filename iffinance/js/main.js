@@ -1,10 +1,10 @@
 function openModal(modalId){
-    const modal = document.querySelector("modalId")
+    const modal = document.querySelector(modalId)
     modal.style.display = "flex"
 }
 
 function closeModal(modalId){
-    const modal = document.querySelector("modalId")
+    const modal = document.querySelector(modalId)
     modal.style.display = "none"
 }
 
@@ -25,72 +25,99 @@ function addTicker(event){
                 <h3>${bolsa}</h3>
             </header>
             <main>
-                <span>▲ US$ ${valor}</span>
+                <span>▲ US$ <span>${valor}</span></span>
             </main>
             <footer>
                 <span>Ativos: <span>${ativos}</span></span>
-                <span>US$ ${total}</span>
-            </footer>   
+                <span class="total">US$ <span>${total}</span></span>
+            </footer>
             <div class="buttons">
-                <button type="button" onclick="openModal('#edit')">Editar</button>
+                <button type="button" onclick="openEditCard(event)">Editar</button>
                 <button type="button" onclick="deleteCard(event)">Excluir</button>
+            </div>
         </div>
     `
     const cards = document.querySelector("#cards")
     cards.innerHTML += card
+    
+    event.target.reset()
+    
     closeModal('#add')
-    }
+}
 
-    function editTicker(event){
-        event.preventDefault()
+function editTicker(event){
+    event.preventDefault()
 
-        const idcard = event.target.idcard.value
-        const ticker = event.target.editticker.value
-        const bolsa = event.target.editbolsa.value
-        const valor = event.target.editvalor.value
-        const ativos = event.target.editativos.value
+    const idcard = event.target.idcard.value
+    const ticker = event.target.editticker.value
+    const bolsa = event.target.editbolsa.value
+    const valor = event.target.editvalor.value
+    const ativos = event.target.editativos.value
 
-        const total = valor * ativos
+    const total = valor * ativos
 
-        const cardStockEdit = document.getElementById(idcard)
-        
-        const h2ticker = cardStockEdit.querySelector('header h2')
-        h2ticker.innerText = ticker
+    const cardStockEdit = document.getElementById(idcard)
 
-        closeModal('#edit')
-    }
+    const h2Ticker = cardStockEdit.querySelector('header h2')
+    h2Ticker.innerText = ticker
+ 
+    const h3Bolsa = cardStockEdit.querySelector('header h3')
+    h3Bolsa.innerText = bolsa
 
-    function showButtons(event){
-        const cardStock = event.target
-        const buttons = event.target.querySelector(".buttons")
-        buttons.style.display = "flex"
-    }
+    const spanValor = cardStockEdit.querySelector('main span span')
+    spanValor.innerText = valor
 
-    function hideButtons(event){
-        const cardStock = event.target
-        const buttons = event.target.querySelector(".buttons")
-        buttons.style.display = "none"
-    }
+    const spanAtivos = cardStockEdit.querySelector('footer span span')
+    spanAtivos.innerText = ativos
 
-    function deleteCard(event){
-        const cardStock = event.target.closest(".card-stock")
-        cardStock.remove()
-    }
+    const spanTotal = cardStockEdit.querySelector('footer span.total span')
+    spanTotal.innerText = total
+    
+    closeModal('#edit')
+}
 
-    function openEditCard(event){
-        const buttonEdit = event.target
-        const cardStock = buttonEdit.closest(".card-stock")
+function showButtons(event){
+    const cardStock = event.target
+    const buttons = cardStock.querySelector(".buttons")
+    buttons.style.display = "flex"
+}
 
-        
+function hideButtons(event){
+    const cardStock = event.target
+    const buttons = cardStock.querySelector(".buttons")
+    buttons.style.display = "none"
+}
 
-        const ticker = cardStock.querySelector('header h2')
-        const inputEditTicker = document.getElementById('editticker')
-        inputEditTicker.value = ticker
+function deleteCard(event){
+    const buttonDelete = event.target
+    const cardStock = buttonDelete.closest(".card-stock")
+    cardStock.remove()
+}
 
-        const inputIdCard = document.getElementById('idcard')
-        inputIdCard.value = 
+function openEditCard(event){
+    const buttonEdit = event.target
+    const cardStock = buttonEdit.closest(".card-stock")
 
-        const bolsa = cardStock.querySelector('header h3').innerText
+    const ticker = cardStock.querySelector('header h2').innerText
+    const inputEditTicker = document.getElementById('editticker')
+    inputEditTicker.value = ticker
 
-        
-    }
+    const idCard = cardStock.getAttribute('id')
+    //cardStock.setAttribute("teste", "123") //Exemplo de setAttribute para adicionar um atributo em um elemento
+    const inputIdCard = document.getElementById('idcard')
+    inputIdCard.value = idCard
+
+    const bolsa = cardStock.querySelector('header h3').innerText
+    const selectEditBolsa = document.getElementById('editbolsa')
+    selectEditBolsa.value = bolsa
+
+    const valor = cardStock.querySelector('main span span').innerText
+    const inputEditValor = document.getElementById('editvalor')
+    inputEditValor.value = valor
+
+    const ativos = cardStock.querySelector('footer span span').innerText
+    const inputEditAtivos = document.getElementById('editativos')
+    inputEditAtivos.value = ativos
+
+    openModal('#edit')
+}
